@@ -1,0 +1,25 @@
+<Sysmon schemaversion="4.90">
+
+  <HashAlgorithms>md5,sha256</HashAlgorithms>
+
+  <EventFiltering>
+
+    <!-- Process Creation -->
+    <ProcessCreate onmatch="include">
+    </ProcessCreate>
+
+    <!-- Network Connections -->
+    <NetworkConnect onmatch="include">
+    </NetworkConnect>
+
+    <!-- DNS Queries -->
+    <DnsQuery onmatch="include">
+    </DnsQuery>
+
+    <!-- File Creation -->
+    <FileCreate onmatch="include">
+    </FileCreate>
+
+  </EventFiltering>
+
+</Sysmon>
