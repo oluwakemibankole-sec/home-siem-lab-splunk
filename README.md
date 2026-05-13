@@ -65,8 +65,74 @@ This dashboard contains panels for:
 - Sysmon process creation monitoring
 - Network connection monitoring
 
-## Key Splunk Searches
-Add your SPL searches here.
+## Splunk Detection Searches
+
+### Failed Login Detection
+
+File:
+
+`splunk-searches/failed-logins.spl`
+
+```spl
+index=windows sourcetype="WinEventLog:Security" EventCode=4625
+| stats count by Account_Name, Source_Network_Address, Failure_Reason
+| sort - count
+```
+
+---
+
+### Brute Force Detection
+
+File:
+
+`splunk-searches/brute-force-detection.spl`
+
+```spl
+index=windows sourcetype="WinEventLog:Security" EventCode=4625
+| stats count by Account_Name, Source_Network_Address
+| where count >= 5
+| sort - count
+```
+
+---
+
+### Suspicious PowerShell Detection
+
+File:
+
+`splunk-searches/suspicious-powershell.spl`
+
+```spl
+index=windows sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
+(Image="*powershell.exe*" OR CommandLine="*EncodedCommand*" OR CommandLine="*-enc*")
+| table _time host User Image CommandLine ParentImage
+```
+
+---
+
+### Sysmon Process Creation Monitoring
+
+File:
+
+`splunk-searches/sysmon-process-creation.spl`
+
+```spl
+index=windows sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1
+| table _time host User Image CommandLine ParentImage
+```
+
+---
+
+### Network Connection Monitoring
+
+File:
+
+`splunk-searches/network-connections.spl`
+
+```spl
+index=windows sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=3
+| table _time host Image DestinationIp DestinationPort Protocol
+```
 
 ## Incident Investigation Example
 Explain one alert from detection to investigation.
