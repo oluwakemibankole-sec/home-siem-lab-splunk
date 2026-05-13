@@ -134,6 +134,48 @@ index=windows sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" E
 | table _time host Image DestinationIp DestinationPort Protocol
 ```
 
+## Configuration Files
+
+### inputs.conf
+
+Used to ingest Windows Event Logs and Sysmon logs into Splunk.
+
+Location:
+
+```text
+configs/inputs.conf
+```
+
+### outputs.conf
+
+Used by the Splunk Universal Forwarder to send logs to the Splunk server.
+
+Location:
+
+```text
+configs/outputs.conf
+```
+
+### sysmonconfig.xml
+
+Sysmon configuration used to collect endpoint telemetry.
+
+Location:
+
+```text
+configs/sysmonconfig.xml
+```
+
+### sysmon-notes.md
+
+Documentation of Sysmon event IDs and installation steps.
+
+Location:
+
+```text
+configs/sysmon-notes.md
+```
+
 ## Incident Investigation Example
 Explain one alert from detection to investigation.
 
