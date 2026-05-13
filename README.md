@@ -35,6 +35,19 @@ Windows Endpoint → Splunk Universal Forwarder → Splunk Enterprise → Search
 ### 9. SOC Dashboard Overview
 ![SOC Dashboard Overview](screenshots/09-soc-dashboard-overview.png)
 
+## Dashboard Configuration
+
+The Splunk dashboard configuration used in this lab can be found here:
+
+[View SOC Monitoring Dashboard XML](dashboards/soc-monitoring-dashboard.xml)
+
+This dashboard contains panels for:
+- Failed login detection
+- Suspicious PowerShell activity
+- Sysmon process monitoring
+- Network connection analysis
+- Brute-force detection
+
 ### 10. Alert or Report Configuration
 ![Alert or Report Configuration](screenshots/10-alert-report-configuration.png)
 
