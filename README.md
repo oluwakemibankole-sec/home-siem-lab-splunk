@@ -287,6 +287,27 @@ Location:
 configs/sysmon-notes.md
 ```
 
+## Alert Configurations
+
+The SIEM lab includes custom Splunk alert configurations for authentication monitoring and suspicious PowerShell activity detection.
+
+### Alert Files
+
+| Alert | Location |
+|---|---|
+| Brute Force Login Alert | `alerts/brute-force-alert.md` |
+| Suspicious PowerShell Alert | `alerts/suspicious-powershell-alert.md` |
+| Splunk Saved Searches | `alerts/savedsearches.conf` |
+
+### Detection Capabilities
+
+- Brute-force authentication monitoring
+- Failed login threshold detection
+- Suspicious PowerShell execution detection
+- Encoded PowerShell command monitoring
+- Scheduled alert execution
+- SOC alert triage workflow
+
 ## Incident Investigation Example
 
 A SOC-style investigation was conducted for a simulated brute-force login attempt detected in Splunk.
