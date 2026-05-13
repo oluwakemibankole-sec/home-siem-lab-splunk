@@ -1,0 +1,24 @@
+-- Failed Login (Event ID 4625)
+index=wineventlog EventCode=4625
+| stats count by Account_Name, host, src_ip
+| sort -count
+
+-- Brute Force (5+ failures in 5 mins)
+index=wineventlog EventCode=4625
+| bucket _time span=5m
+| stats count by Account_Name, _time
+| where count > 5
+
+-- Suspicious PowerShell
+index=wineventlog source="WinEventLog:Microsoft-Windows-PowerShell/Operational"
+| search CommandLine="*-enc*" OR CommandLine="*bypass*" OR CommandLine="*IEX*"
+
+-- Sysmon Process Creation (Event ID 1)
+index=sysmon EventCode=1
+| stats count by Image, ParentImage, User, host
+| sort -count
+
+-- Network Connections (Sysmon Event ID 3)
+index=sysmon EventCode=3
+| stats count by DestinationIp, DestinationPort, Image
+| sort -count
