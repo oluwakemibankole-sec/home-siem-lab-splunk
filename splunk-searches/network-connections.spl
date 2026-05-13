@@ -1,0 +1,2 @@
+index=windows sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=3
+| table _time host Image DestinationIp DestinationPort Protocol
