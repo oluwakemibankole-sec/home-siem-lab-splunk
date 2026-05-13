@@ -7,7 +7,7 @@ This project demonstrates how I built a home SIEM lab using Splunk Free, Sysmon,
 Windows Endpoint → Splunk Universal Forwarder → Splunk Enterprise → Searches, Alerts, and Dashboards
 
 ## Tools Used
-- Splunk Enterprise / Splunk Free
+- Splunk Free
 - Splunk Universal Forwarder
 - Sysmon
 - Windows Event Viewer
