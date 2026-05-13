@@ -1,4 +1,4 @@
-# Home SIEM Lab with Splunk Free
+# Home SIEM Lab with Splunk
 
 ## Project Overview
 This project demonstrates how I built a home SIEM lab using Splunk Free, Sysmon, and Windows Event Logs to detect suspicious activities such as failed logins, brute-force attempts, suspicious PowerShell usage, and process execution.
