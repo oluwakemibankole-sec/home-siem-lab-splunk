@@ -6,6 +6,38 @@ This project demonstrates how I built a home SIEM lab using Splunk Free, Sysmon,
 ## Lab Architecture
 Windows Endpoint → Splunk Universal Forwarder → Splunk Enterprise → Searches, Alerts, and Dashboards
 
+## SIEM Lab Screenshots
+
+### 1. Splunk Search & Reporting Homepage
+![Splunk Search & Reporting Homepage](screenshots/01-splunk-search-homepage.png)
+
+### 2. Windows Security Logs in Splunk
+![Windows Security Logs in Splunk](screenshots/02-windows-security-logs.png)
+
+### 3. Sysmon Logs in Splunk
+![Sysmon Logs in Splunk](screenshots/03-sysmon-logs-in-splunk.png)
+
+### 4. Failed Login Detection - Event ID 4625
+![Failed Login Detection](screenshots/04-failed-login-detection.png)
+
+### 5. Brute Force Detection Search
+![Brute Force Detection](screenshots/05-bruteforce-detection.png)
+
+### 6. Suspicious PowerShell Detection
+![Suspicious PowerShell Detection](screenshots/06-suspicious-powershell-detection.png)
+
+### 7. Sysmon Process Creation Events
+![Sysmon Process Creation](screenshots/07-sysmon-process-creation.png)
+
+### 8. Network Connection Monitoring
+![Network Connection Monitoring](screenshots/08-network-connection-monitoring.png)
+
+### 9. SOC Dashboard Overview
+![SOC Dashboard Overview](screenshots/09-soc-dashboard-overview.png)
+
+### 10. Alert or Report Configuration
+![Alert or Report Configuration](screenshots/10-alert-report-configuration.png)
+
 ## Tools Used
 - Splunk Free
 - Splunk Universal Forwarder
@@ -19,9 +51,6 @@ Windows Endpoint → Splunk Universal Forwarder → Splunk Enterprise → Search
 - Suspicious PowerShell activity
 - Sysmon process creation monitoring
 - Network connection monitoring
-
-## Screenshots
-Add your screenshots here.
 
 ## Key Splunk Searches
 Add your SPL searches here.
