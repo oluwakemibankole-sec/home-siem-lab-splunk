@@ -177,7 +177,23 @@ configs/sysmon-notes.md
 ```
 
 ## Incident Investigation Example
-Explain one alert from detection to investigation.
+
+A SOC-style investigation was conducted for a simulated brute-force login attempt detected in Splunk.
+
+Report location:
+
+```text
+reports/incident-investigation-report.md
+```
+
+The investigation included:
+
+- Failed login analysis
+- Authentication monitoring
+- Event correlation
+- Sysmon telemetry review
+- Threat investigation workflow
+- MITRE ATT&CK mapping
 
 ## What I Learned
 - Log collection
