@@ -4,8 +4,119 @@
 This project demonstrates how I built a home SIEM lab using Splunk Free, Sysmon, and Windows Event Logs to detect suspicious activities such as failed logins, brute-force attempts, suspicious PowerShell usage, and process execution.
 
 ## Lab Architecture
-Windows Endpoint → Splunk Universal Forwarder → Splunk Enterprise → Searches, Alerts, and Dashboards
 
+### Environment Overview
+
+The home SIEM lab was built in a Windows-based virtualized environment to simulate real-world SOC monitoring and log analysis workflows.
+
+---
+
+### Lab Components
+
+| Component | Details |
+|---|---|
+| Host Machine | Windows 10 Pro |
+| Virtualization Platform | VirtualBox |
+| SIEM Platform | Splunk Enterprise Free |
+| Splunk Version | Splunk Enterprise 9.x |
+| Log Forwarder | Splunk Universal Forwarder |
+| Endpoint Monitoring | Sysmon |
+| Log Sources | Windows Security Logs, System Logs, Sysmon Logs |
+| Detection Engine | Splunk SPL Searches |
+| Monitoring Dashboard | Splunk Search & Reporting |
+
+---
+
+### Virtual Machine Configuration
+
+| VM | Operating System | Purpose |
+|---|---|---|
+| WIN10-LAB | Windows 10 | Splunk Server + Log Source |
+| Optional Kali VM | Kali Linux | Attack Simulation / Testing |
+
+---
+
+### Network Configuration
+
+| Component | IP Address | Purpose |
+|---|---|---|
+| Splunk Server | 127.0.0.1 | Local SIEM Instance |
+| Splunk Management Port | 8089 | Splunk Management |
+| Splunk Web Interface | 8000 | Splunk Dashboard Access |
+| Splunk Forwarding Port | 9997 | Log Forwarding |
+| Windows Endpoint | Localhost | Windows Event Log Source |
+
+---
+
+### Data Flow Architecture
+
+```text
++--------------------------------------------------+
+|               Windows 10 Endpoint                |
+|--------------------------------------------------|
+| Windows Security Logs                            |
+| Sysmon Logs                                      |
+| PowerShell Activity                              |
++-------------------------+------------------------+
+                          |
+                          | Splunk Universal Forwarder
+                          | Port 9997
+                          v
++--------------------------------------------------+
+|                Splunk Enterprise SIEM            |
+|--------------------------------------------------|
+| Log Collection                                   |
+| Event Indexing                                   |
+| SPL Searches                                     |
+| Threat Detection                                 |
+| Dashboards & Alerts                              |
++-------------------------+------------------------+
+                          |
+                          v
++--------------------------------------------------+
+|              SOC Analyst Investigation           |
+|--------------------------------------------------|
+| Failed Login Detection                           |
+| Brute Force Analysis                             |
+| Suspicious PowerShell Monitoring                 |
+| Sysmon Process Monitoring                        |
+| Incident Investigation                           |
++--------------------------------------------------+
+```
+
+---
+
+### Ports Used
+
+| Port | Service |
+|---|---|
+| 8000 | Splunk Web Interface |
+| 8089 | Splunk Management |
+| 9997 | Splunk Forwarder Data Input |
+
+---
+
+### Log Sources Monitored
+
+- Windows Security Logs
+- Windows System Logs
+- Windows Application Logs
+- Sysmon Operational Logs
+- PowerShell Activity
+- Process Creation Events
+- Network Connection Events
+- DNS Query Events
+
+---
+
+### Security Monitoring Use Cases
+
+- Failed Login Detection
+- Brute Force Detection
+- Suspicious PowerShell Detection
+- Process Creation Monitoring
+- Network Connection Monitoring
+- Threat Hunting using Sysmon Telemetry
 ## SIEM Lab Screenshots
 
 ### 1. Splunk Search & Reporting Homepage
