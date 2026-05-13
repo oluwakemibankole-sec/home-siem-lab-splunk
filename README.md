@@ -35,6 +35,20 @@ Windows Endpoint → Splunk Universal Forwarder → Splunk Enterprise → Search
 ### 9. SOC Dashboard Overview
 ![SOC Dashboard Overview](screenshots/09-soc-dashboard-overview.png)
 
+## Tools Used
+- Splunk Free
+- Splunk Universal Forwarder
+- Sysmon
+- Windows Event Viewer
+- PowerShell
+
+## Detection Use Cases
+- Failed login detection
+- Brute-force login attempts
+- Suspicious PowerShell activity
+- Sysmon process creation monitoring
+- Network connection monitoring
+
 ## Dashboard Configuration
 
 The Splunk dashboard configuration used in this lab can be found here:
@@ -50,20 +64,6 @@ This dashboard contains panels for:
 
 ### 10. Alert or Report Configuration
 ![Alert or Report Configuration](screenshots/10-alert-report-configuration.png)
-
-## Tools Used
-- Splunk Free
-- Splunk Universal Forwarder
-- Sysmon
-- Windows Event Viewer
-- PowerShell
-
-## Detection Use Cases
-- Failed login detection
-- Brute-force login attempts
-- Suspicious PowerShell activity
-- Sysmon process creation monitoring
-- Network connection monitoring
 
 ## Splunk Detection Searches
 
