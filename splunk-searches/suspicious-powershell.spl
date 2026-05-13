@@ -1,0 +1,3 @@
+index=windows sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
+(Image="*powershell.exe*" OR CommandLine="*EncodedCommand*" OR CommandLine="*-enc*")
+| table _time host User Image CommandLine ParentImage
